@@ -18,10 +18,9 @@ alter table clients auto_increment=1;
 
 CREATE table PRODUCTS(
 	idProduct int auto_increment primary key,
-    productName varchar(10),
+    productName varchar(30),
 	classification_kids bool default false,
     category enum('Eletrônico', 'Vestimenta', 'Brinquedos', 'Alimentos', 'Móveis') not null,
-    address varchar(30),
     evaluation float default 0,
     size varchar(10)
 );
@@ -63,7 +62,7 @@ CREATE table SELLERS(
     socialName varchar(255) not null,
     abstName varchar(255),
 	cnpj char(15),
-    cpf char(9),
+    cpf char(11),
     location varchar(255),
     contact char(11) not null,
     constraint unique_cnpj_seller unique(cnpj),
